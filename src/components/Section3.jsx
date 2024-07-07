@@ -1,7 +1,15 @@
-import { trendData } from './data'
+import { useEffect, useState } from 'react'
+import { productData } from './data'
 import { ArrowRight } from './Icons'
+import { useNavigate } from 'react-router-dom'
 
 const Section3 = () => {
+  const [trendData, setTrendData] = useState([])
+  const navigate = useNavigate()
+  useEffect(() => {
+    const filterData = productData.filter((data) => data.type === 'trend')
+    setTrendData(filterData)
+  }, [])
   return (
     <section>
       <div className="items-center flex ">
@@ -14,10 +22,11 @@ const Section3 = () => {
       <article className="flex justify-center items-center">
         <div className="flex flex-wrap gap-[1.5rem] relative ">
           {trendData.map((data) => {
+            const id = data.id
             return (
               <div
                 className="relative w-full max-w-[287px] h-[377px] mx-auto text-center "
-                key={data.id}
+                key={id}
               >
                 <img src={data.src} alt="data.id" className="w-full h-full" />
                 <div className="absolute border-none rounded-lg bottom-2 w-full max-w-[250px] left-0 right-0 bg-white mx-auto p-2 ">
@@ -25,9 +34,12 @@ const Section3 = () => {
                     <h3 className="text-[20px] font-bold text-[rgba(0,0,0,0.6)]">
                       {data.name}
                     </h3>
-                    <div className="p-2 border border-[#D19A64] rounded-full">
+                    <button
+                      onClick={() => navigate(`/product/${id}`)}
+                      className="p-2 border border-[#D19A64] rounded-full"
+                    >
                       <ArrowRight />
-                    </div>
+                    </button>
                   </div>
                   <div className="flex justify-between mt-4">
                     <h3 className="font-bold text-[20px]">{`$${data.price}`}</h3>
