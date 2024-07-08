@@ -3,4 +3,35 @@
 @tailwind components;
 @tailwind utilities;
 
-
+html {
+  scroll-behavior: smooth;
+}
+@layer components {
+  .btn-bg {
+    @apply bg-[#D19A64] hover:bg-[rgb(202,163,123)] text-white font-bold py-2;
+  }
+  .form-heading {
+    @apply text-[24px] leading-[31.8px];
+  }
+  .p-text2 {
+    @apply text-[24px] leading-[33.6px];
+  }
+  .p-text {
+    @apply md:text-[24px] md:leading-[31.8px];
+  }
+  .p-text3 {
+    @apply text-[12px] leading-[16px] text-black;
+  }
+  .input-container {
+    @apply flex items-center gap-2 border rounded-lg p-4 w-full;
+  }
+  .flex-custom {
+    @apply flex justify-between items-center;
+  }
+  .color-1 {
+    @apply text-[#D19A64];
+  }
+  .bg-1 {
+    @apply bg-[#D19A64];
+  }
+}

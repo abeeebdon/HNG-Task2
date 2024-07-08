@@ -11,14 +11,14 @@ const Section4 = () => {
           </h2>
           <hr className="w-full border border-[#D19A64A6] basis-[45%]" />
         </div>
-        <div className="flex items-center gap-[12%] my-4">
+        <div className="flex items-center gap-[12%] my-4 flex-wrap text-center">
           <img src="/assets/reviewStar.png" alt="imp" />
           <p className="pt-serif-bold text-[32px] leading-[44.8px]">
             Here’s what our esteemed customer has to say about us.
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-auto">
         {reviews.map((review, index) => {
           return (
             <div

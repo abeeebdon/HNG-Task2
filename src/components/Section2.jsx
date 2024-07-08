@@ -2,7 +2,7 @@ import { categoriesData } from './data'
 
 const Section2 = () => {
   return (
-    <section>
+    <section id="categories">
       <div className="items-center flex gap-8">
         <hr className="w-full border border-[#D19A64A6]" />
         <h2 className="my-16 pt-serif-bold leading-[56px] text-[#D19A64] text-[40px] text-center">

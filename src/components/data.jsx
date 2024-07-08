@@ -155,3 +155,14 @@ export const reviews = [
     rating: 5,
   },
 ]
+export const btnData = [
+  { id: 1, name: 'Description' },
+  {
+    id: 2,
+    name: 'Customer Review',
+  },
+  {
+    id: 3,
+    name: 'Warranty',
+  },
+]

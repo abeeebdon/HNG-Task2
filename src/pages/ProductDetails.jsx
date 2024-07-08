@@ -1,42 +1,39 @@
 import { useParams } from 'react-router-dom'
 import { ArrRight, Heart, Plus } from '../components/Icons'
-import { productData } from '../components/data'
+import { btnData, productData } from '../components/data'
 import { useEffect, useState } from 'react'
+import MenuHeading from '../components/MenuHeading'
+import ProductInfo from '../components/ProductInfo'
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({})
   const [result, setResult] = useState(1)
   const [filterProduct, setFilterProduct] = useState([])
+  const [num, setNum] = useState(1)
   const { id } = useParams()
+  const handleBtn = (id) => {
+    setNum(id)
+    console.log(num)
+  }
   useEffect(() => {
     const findProduct = productData.find((data) => data.id == id)
     setProduct(findProduct)
-    const filter = productData.filter((data) => data.id >= id)
-    const filtered = productData.filter((data, index) => index < 2)
+    const filterData = productData.filter((data) => data.id >= id)
+    const filtered = filterData.filter((data, index) => index < 2)
     setFilterProduct(filtered)
-    console.log(filtered)
   }, [])
   return (
     <section className="flex justify-center">
       <article className="w-full max-w-[1440px]  ">
-        <div className="flex justify-between bg-[#F5F5F5]">
-          <div className="flex">
-            <h2>Home</h2>
-            <ArrRight />
-            <p>Product Detail</p>
-          </div>
-          <div>
-            <p>Continue Shopping</p>
-          </div>
-        </div>
-        <div className="flex mt-8 p-4 gap-6 items-center">
-          <div className="h-full max-h-471px flex flex-col justify-between gap-5">
-            <div className="w-[140px] h-[140px]">
+        <MenuHeading location="Productdetails" />
+        <div className="flex p-2 gap-6 items-center h-full max-h-[472px]">
+          <div className="h-full max-h-[471px] flex flex-col justify-between gap-5">
+            <div className="w-[140px] h-full max-h-[140px]">
               <img src={`/${product.src}`} className="w-full h-full" />
             </div>
             {filterProduct.map((data) => {
               return (
-                <div className="w-[140px] h-[140px]">
+                <div className="w-[140px] max-h-[140px] h-full">
                   <img src={`/${data.src}`} className="w-full h-full" />
                 </div>
               )
@@ -96,17 +93,21 @@ const ProductDetails = () => {
         </div>
         <div className="mt-8 p-4">
           <div className="flex gap-4">
-            <button>Description</button>
-            <button>Customer Review</button>
-            <button>Warranty</button>
+            {btnData.map((data) => {
+              return (
+                <div key={data.id}>
+                  <button
+                    className={data.id === num ? 'bg-red-500' : 'bg-white'}
+                    onClick={() => handleBtn(data.id)}
+                  >
+                    {data.name}
+                  </button>
+                </div>
+              )
+            })}
           </div>
           <div>
-            <p>
-              Our Rose gold Ring with Diamond cut stone is one of the best
-              selling product at Lasom. It’s unique stone crafting makes it
-              exceptionally beautiful which has won the heart of many of our
-              customers.
-            </p>
+            <ProductInfo num={num} />
           </div>
         </div>
       </article>

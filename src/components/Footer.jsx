@@ -9,10 +9,10 @@ const Footer = () => {
   }, [])
   return (
     <section className=" flex justify-center items-center  text-white mt-16">
-      <div className="w-full  max-w-[1440px] bg-[#D19A64] h-[555px] flex items-center justify-center">
-        <div className="flex flex-col w-full max-w-[1314px] ">
-          <div className="flex justify-between gap-[10%] w-full max-w-[1314px] h-[259px]">
-            <article className="w-full max-w-[392px] h-[259px] flex flex-col justify-between">
+      <div className="w-full  max-w-[1440px] bg-[#D19A64] min-h-[555px] flex items-center justify-center">
+        <div className="flex flex-col w-full max-w-[1314px] p-2 ">
+          <div className="flex justify-between flex-col xs:flex-row gap-[5%] w-full max-w-[1314px] min-h-[259px]">
+            <article className="w-full max-w-[392px] h-full min-h-[259px] max-h-[300px] flex flex-col justify-between">
               <h2 className="text-[#F48C06] rubik text-[40px] leading-[47.4px]">
                 Lasom
               </h2>
@@ -33,8 +33,8 @@ const Footer = () => {
                 </div>
               </div>
             </article>
-            <div className="flex justify-between basis-[60%]">
-              <article className="w-full max-w-[392px] flex flex-col h-[259px] gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 basis-[100%] ">
+              <article className="w-full max-w-[392px] flex flex-col h-full  gap-5">
                 <h2 className="font-bold text-[24px] leading-[33.6px] text-[rgba(0,0,0,0.8)] pt-4">
                   Company
                 </h2>
@@ -45,7 +45,7 @@ const Footer = () => {
                   <p>Journal</p>
                 </div>
               </article>
-              <article className="w-full flex flex-col h-[259px] gap-5">
+              <article className="w-full flex flex-col gap-5">
                 <h2 className="font-bold text-[24px] leading-[33.6px] text-[rgba(0,0,0,0.8)] pt-4">
                   Help
                 </h2>
@@ -56,7 +56,7 @@ const Footer = () => {
                   <p>Privacy policy</p>
                 </div>
               </article>
-              <article className="w-full  flex flex-col h-[259px] gap-5">
+              <article className="w-full flex flex-col gap-5">
                 <h2 className="font-bold text-[24px] leading-[33.6px] text-[rgba(0,0,0,0.8)] pt-4">
                   Contact
                 </h2>
