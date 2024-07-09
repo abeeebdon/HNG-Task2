@@ -51,7 +51,7 @@ const Cart = () => {
           </div>
         </div>
 
-        <div className="w-full p-6 max-w-[400px] basis-[45%] border mx-auto  rounded-lg">
+        <div className="w-full p-6 max-w-[400px] basis-[45%] border mx-auto mt-8 md:mt-0 rounded-lg">
           <section className="p-text4 pt-serif-bold text-opacity-[80%]  ">
             <article className="flex justify-between items-center my-5 ">
               <p>Subtotal</p>
