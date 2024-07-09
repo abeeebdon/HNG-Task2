@@ -1,25 +1,3 @@
-export const categoriesData = [
-  {
-    id: 1,
-    src: 'assets/cat1.png',
-    name: 'Earrings',
-  },
-  {
-    id: 2,
-    src: 'assets/cat2.png',
-    name: 'Necklase',
-  },
-  {
-    id: 3,
-    src: 'assets/cat3.png',
-    name: 'Rings',
-  },
-  {
-    id: 4,
-    src: 'assets/cat4.png',
-    name: 'Bracelets',
-  },
-]
 export const productData = [
   {
     id: 1,
@@ -132,37 +110,5 @@ export const productData = [
     name: 'Princess cut',
     price: '850',
     type: 'trend',
-  },
-]
-
-export const reviews = [
-  {
-    name: 'James Chukwu',
-    text: 'A friend recommended Lasom to me. I got a ring to propose to my girlfriend from there. She said YES!!.',
-    src: 'assets/review1.png',
-    rating: 5,
-  },
-  {
-    name: 'Linda Jones',
-    text: 'I got my Bridal jewelry set from Lasom. It transformed me into the most beautiful bride in the world.',
-    src: 'assets/review2.png',
-    rating: 5,
-  },
-  {
-    name: 'Sherry Cole',
-    text: 'Looking Elegant has always being a goal of mine. That goal was achieved when I started shopping at Lasom.',
-    src: 'assets/review3.png',
-    rating: 5,
-  },
-]
-export const btnData = [
-  { id: 1, name: 'Description' },
-  {
-    id: 2,
-    name: 'Customer Review',
-  },
-  {
-    id: 3,
-    name: 'Warranty',
   },
 ]

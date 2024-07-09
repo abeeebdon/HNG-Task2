@@ -19,7 +19,6 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Missing />} />
         </Routes>
-
         <Footer />
       </div>
     </section>
