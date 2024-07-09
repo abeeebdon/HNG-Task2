@@ -8,10 +8,10 @@ const Products = () => {
     <section>
       <MenuHeading status={false} location="Products" />
       <Section1 />
-      <h2 className="my-8 p-text2 px-4 pt-serif-bold">
+      <h2 className="my-8 p-text2 px-4 pt-serif-bold p-2">
         Choose from our varieties of products...
       </h2>
-      <div className="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1.5rem] relative ">
+      <div className="grid p-2 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1.5rem] relative ">
         {productData.map((data) => {
           return (
             <div key={data.id}>

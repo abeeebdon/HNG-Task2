@@ -126,7 +126,7 @@ const Checkout = () => {
                   </article>
                   <article className=" flex mx-auto gap-6 flex-wrap mt-4 items-center">
                     <div
-                      className="flex items-center gap-2 mx-auto md:mx-2 xs:mx-2"
+                      className="flex items-center gap-2  md:mx-2 xs:mx-2"
                       onClick={handleSelected}
                     >
                       <div className="flex w-[20px] h-[20px] justify-center items-center rounded-full border border-[#D19A64]">
@@ -150,7 +150,7 @@ const Checkout = () => {
                           <div className="hidden"></div>
                         )}
                       </div>
-                      <span>Pay with card</span>
+                      <span>Pay on delivery</span>
                     </div>
                   </article>
                 </form>

@@ -50,8 +50,11 @@ const Headers = () => {
           </div>
         </header>
         {showNav && width < 768 && (
-          <div className="fixed right-0 w-[20vh] top-[10%] z-20 text-white bg-1 bg-opacity-35 h-[50%] p-4">
-            <div className="flex flex-col justify-between gap-6">
+          <div className="fixed right-0 w-[20vh] top-[15%] z-20 text-black bg-white  h-[50%] p-4">
+            <div
+              className="flex flex-col justify-between gap-6"
+              onClick={() => setShowNav(false)}
+            >
               <NavLink to="/products" style={activeState}>
                 Products
               </NavLink>
