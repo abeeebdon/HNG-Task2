@@ -1,23 +1,21 @@
 import { useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 import { CartIcon, MenuIcon, SearchIcon, UserIcon } from './Icons'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Headers = () => {
   const { width } = useWindowSize()
   const [showNav, setShowNav] = useState(false)
   const activeState = ({ isActive }) => {
-    return isActive ? { color: 'plum' } : {}
+    return isActive ? { color: '#D19A64' } : {}
   }
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-[1440px] mx-auto">
         <header className="flex justify-between p-4 items-center ">
-          <Link to="/">
-            <h2 className="rubik text-[40px] text-[#F48C06] leading-[47.4px] pr-4">
-              LASOM
-            </h2>
-          </Link>
+          <h2 className="rubik text-[40px] text-[#F48C06] leading-[47.4px] pr-4">
+            LASOM
+          </h2>
           <article className="flex justify-between gap-4  items-center">
             {width > 768 && (
               <div className="flex justify-between gap-8 lg:gap-10 md:text-[20px] lg:text-[28px] leading-[37.4px]  pt-serif-regular">

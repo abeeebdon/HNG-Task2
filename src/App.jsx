@@ -1,25 +1,28 @@
 import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Footer'
 import Headers from './components/Headers'
-
+import Missing from './components/Missing'
 import Products from './pages/Products'
 import Checkout from './pages/Checkout'
 import Cart from './pages/Cart'
+import HomePage from './pages/HomePage'
 
 const App = () => {
   return (
-    <div>
-      <Headers />
+    <section className="flex justify-center items-center">
+      <div className="w-full max-w-[1440px] py-4 px-4 lg:px-6">
+        <Headers />
+        <Routes>
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<Missing />} />
+        </Routes>
 
-      <Routes>
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/" element={<Products />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </section>
   )
 }
 export default App

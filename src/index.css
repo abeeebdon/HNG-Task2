@@ -22,6 +22,12 @@ html {
   .p-text3 {
     @apply text-[12px] leading-[16px] text-black;
   }
+  .price {
+    @apply text-[20px] leading-[26.5px] text-black;
+  }
+  .p-text4 {
+    @apply text-[16px] leading-[21.2px] text-black;
+  }
   .input-container {
     @apply flex items-center gap-2 border rounded-lg p-4 w-full;
   }

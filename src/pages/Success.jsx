@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import { ArrRight } from '../components/Icons'
 
 const Success = ({ checkoutProducts }) => {
+  const navigate = useNavigate()
   const { name, src, price } = checkoutProducts
   return (
     <section className="flex justify-center">
@@ -56,7 +58,10 @@ const Success = ({ checkoutProducts }) => {
             <p>$2505.00</p>
           </div>
         </div>
-        <div className="btn-bg w-full  sm:w-[90%] mx-auto rounded-lg flex justify-center items-center mt-8">
+        <div
+          className="btn-bg w-full  sm:w-[90%] mx-auto rounded-lg flex justify-center items-center mt-8"
+          onClick={() => navigate('/products')}
+        >
           <button>Continue Shopping</button>
         </div>
       </article>

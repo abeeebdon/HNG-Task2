@@ -16,7 +16,7 @@ const ProductCard = ({ data }) => {
             {name}
           </h3>
           <button
-            onClick={() => navigate(`/product/${id}`)}
+            onClick={() => navigate('/cart')}
             className="p-2 border border-[#D19A64] rounded-full"
           >
             <ArrowRight />
@@ -24,7 +24,10 @@ const ProductCard = ({ data }) => {
         </div>
         <div className="flex justify-between mt-4">
           <h3 className="font-bold text-[20px]">{`$${price}`}</h3>
-          <button className="p-2 w-[104px] rounded-md bg-[#D19A64]">
+          <button
+            className="p-2 w-[104px] rounded-md bg-[#D19A64]"
+            onClick={() => navigate('/cart')}
+          >
             Add to Cart
           </button>
         </div>

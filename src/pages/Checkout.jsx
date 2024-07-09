@@ -1,25 +1,33 @@
 import { useEffect, useState } from 'react'
-import {
-  Address,
-  ArrRight,
-  HomeAddress,
-  Phone,
-  UserProfile,
-} from '../components/Icons'
+import { Address, HomeAddress, Phone, UserProfile } from '../components/Icons'
 import { productData } from '../components/data'
 import Success from './Success'
 import MenuHeading from '../components/MenuHeading'
 
 const Checkout = () => {
-  const [num, setNum] = useState(1)
   const [checkout, setCheckout] = useState(false)
   const [checkoutProducts, setCheckoutProducts] = useState({})
+  const [checked, SetChecked] = useState(false)
+  const [selected, setSelected] = useState(false)
   useEffect(() => {
     const checkoutProduct = productData.find((data) => data.id == 1)
     setCheckoutProducts(checkoutProduct)
     console.log(checkoutProducts)
   }, [])
-
+  const handleClick = () => {
+    if (checked) {
+      SetChecked(false)
+    } else {
+      SetChecked(true)
+    }
+  }
+  const handleSelected = () => {
+    if (selected) {
+      setSelected(false)
+    } else {
+      setSelected(true)
+    }
+  }
   return (
     <section className="flex justify-center">
       <article className="w-full max-w-[1440px]  ">
@@ -31,7 +39,7 @@ const Checkout = () => {
           <div className="flex flex-col md:flex-row px-2 gap-10 items-start mt-8">
             <section className="flex-shrink-[2]">
               <form>
-                <h2 className="form-heading pt-serif-bold text-center sm:text-left">
+                <h2 className="form-heading pt-serif-bold text-center sm:text-left my-3">
                   Contact Information
                 </h2>
                 <div className="form">
@@ -53,10 +61,10 @@ const Checkout = () => {
                     </div>
                   </article>
                 </div>
-                <h2 className="form-heading pt-serif-bold mt-8 text-center sm:text-left">
+                <h2 className="form-heading pt-serif-bold mt-8 text-center sm:text-left my-3">
                   Shipping Address
                 </h2>
-                <div className="form-input">
+                <div className="form-input mb-4">
                   <div className="input-container">
                     <HomeAddress />
                     <input type="text" placeholder="Enter your home Address" />
@@ -64,32 +72,72 @@ const Checkout = () => {
                   <article className="flex gap-6  mt-4">
                     <div className="input-container">
                       <Address />
-
                       <input type="text" placeholder="Enter your State" />
                     </div>
                     <div className="input-container">
                       <Address />
-
                       <input type="text" placeholder="Enter your city" />
                     </div>
                   </article>
                 </div>
                 <article>
-                  <div>
-                    <input type="checkbox" />
-                    <span>Ship to another address</span>
+                  <div className="flex items-center">
+                    <div onClick={handleClick}>
+                      {!checked ? (
+                        <div className="w-[30px] h-[30px] justify-center items-center flex border ">
+                          <img src="/assets/mark.png" />
+                        </div>
+                      ) : (
+                        <input
+                          type="checkbox"
+                          className="w-[30px] h-[30px] text-red-500 "
+                        />
+                      )}
+                    </div>
+
+                    <span className="price pt-serif-regular ml-4 color-1">
+                      Ship to another address
+                    </span>
                   </div>
-                  <div>
-                    <input type="checkbox" />
-                    <span>Ship to another address</span>
+                  <div className="flex items-center my-3">
+                    <div onClick={handleClick}>
+                      {checked ? (
+                        <div className="w-[30px] h-[30px] justify-center items-center flex border ">
+                          <img src="/assets/mark.png" />
+                        </div>
+                      ) : (
+                        <input
+                          type="checkbox"
+                          className="w-[30px] h-[30px] text-red-500 "
+                        />
+                      )}
+                    </div>
+                    <span className="price pt-serif-regular ml-4 color-1">
+                      Ship to another address
+                    </span>
                   </div>
                 </article>
                 <article className=" flex gap-6 flex-wrap mt-4">
-                  <div>
-                    <input type="radio" /> <span>Pay with card</span>
+                  <div className="flex items-center" onClick={handleSelected}>
+                    {!selected ? (
+                      <div className="p-1 flex justify-center items-center rounded-full border border-[#D19A64]">
+                        <p className="min-w-3 min-h-3 rounded-full bg-1"></p>
+                      </div>
+                    ) : (
+                      <input type="radio" />
+                    )}
+
+                    <span>Pay with card</span>
                   </div>
-                  <div>
-                    <input type="radio" /> <span>Pay on delivery</span>
+                  <div className="flex items-center" onClick={handleSelected}>
+                    {selected ? (
+                      <div className="p-1 rounded-full border border-[#D19A64]">
+                        <p className="min-w-3 min-h-3 rounded-full bg-1"></p>
+                      </div>
+                    ) : (
+                      <input type="radio" className="w-5 " />
+                    )}
+                    <span>Pay on delivery</span>
                   </div>
                 </article>
                 <div
