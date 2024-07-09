@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
 @layer components {
   .btn-bg {
     @apply bg-[#D19A64] hover:bg-[rgb(202,163,123)] text-white font-bold py-2;
@@ -29,7 +26,7 @@ html {
     @apply text-[16px] leading-[21.2px] text-black;
   }
   .input-container {
-    @apply flex items-center gap-2 border rounded-lg p-4 w-full;
+    @apply flex items-center gap-2 border rounded-lg p-4;
   }
   .flex-custom {
     @apply flex justify-between items-center;

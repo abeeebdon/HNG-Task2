@@ -1,4 +1,7 @@
+import { useNavigate } from 'react-router-dom'
+
 const Section1 = () => {
+  const navigate = useNavigate()
   return (
     <section className="relative">
       <div>
@@ -15,7 +18,10 @@ const Section1 = () => {
         <p className="text-[pt-serif-regular] text-5 md:text-[32px] my-4">
           You are never fully dressed without a jewelry
         </p>
-        <button className="text-[pt-serif-regular] text-5 md:text-[28px] border-4 border-[#F5F5F5]  w-[208px] h-[51px] rounded-lg pb-2">
+        <button
+          onClick={() => navigate('/cart')}
+          className="text-[pt-serif-regular] text-5 md:text-[28px] border-4 border-[#F5F5F5]  w-[208px] h-[51px] rounded-lg pb-2"
+        >
           Shop now
         </button>
       </div>

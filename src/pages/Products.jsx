@@ -6,7 +6,7 @@ import Section1 from '../components/Section1'
 const Products = () => {
   return (
     <section>
-      <MenuHeading status={false} />
+      <MenuHeading status={false} location="Products" />
       <Section1 />
       <h2 className="my-8 p-text2 px-4 pt-serif-bold">
         Choose from our varieties of products...

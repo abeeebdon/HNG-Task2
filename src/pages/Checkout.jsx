@@ -83,16 +83,13 @@ const Checkout = () => {
                 <article>
                   <div className="flex items-center">
                     <div onClick={handleClick}>
-                      {!checked ? (
-                        <div className="w-[30px] h-[30px] justify-center items-center flex border ">
+                      <div className="w-[30px] h-[30px] justify-center items-center flex border ">
+                        {!checked ? (
                           <img src="/assets/mark.png" />
-                        </div>
-                      ) : (
-                        <input
-                          type="checkbox"
-                          className="w-[30px] h-[30px] text-red-500 "
-                        />
-                      )}
+                        ) : (
+                          <div className="hidden"></div>
+                        )}
+                      </div>
                     </div>
 
                     <span className="price pt-serif-regular ml-4 color-1">
@@ -101,43 +98,46 @@ const Checkout = () => {
                   </div>
                   <div className="flex items-center my-3">
                     <div onClick={handleClick}>
-                      {checked ? (
-                        <div className="w-[30px] h-[30px] justify-center items-center flex border ">
+                      <div className="w-[30px] h-[30px] justify-center items-center flex border ">
+                        {checked ? (
                           <img src="/assets/mark.png" />
-                        </div>
-                      ) : (
-                        <input
-                          type="checkbox"
-                          className="w-[30px] h-[30px] text-red-500 "
-                        />
-                      )}
+                        ) : (
+                          <div className="hidden"></div>
+                        )}
+                      </div>
                     </div>
                     <span className="price pt-serif-regular ml-4 color-1">
                       Ship to another address
                     </span>
                   </div>
                 </article>
-                <article className=" flex gap-6 flex-wrap mt-4">
-                  <div className="flex items-center" onClick={handleSelected}>
-                    {!selected ? (
-                      <div className="p-1 flex justify-center items-center rounded-full border border-[#D19A64]">
-                        <p className="min-w-3 min-h-3 rounded-full bg-1"></p>
-                      </div>
-                    ) : (
-                      <input type="radio" />
-                    )}
+                <article className=" flex gap-6 flex-wrap mt-4 items-center">
+                  <div
+                    className="flex items-center gap-2"
+                    onClick={handleSelected}
+                  >
+                    <div className="flex w-[20px] h-[20px] justify-center items-center rounded-full border border-[#D19A64]">
+                      {!selected ? (
+                        <img src="/assets/brown.png" />
+                      ) : (
+                        <div className="hidden"></div>
+                      )}
+                    </div>
 
                     <span>Pay with card</span>
                   </div>
-                  <div className="flex items-center" onClick={handleSelected}>
-                    {selected ? (
-                      <div className="p-1 rounded-full border border-[#D19A64]">
-                        <p className="min-w-3 min-h-3 rounded-full bg-1"></p>
-                      </div>
-                    ) : (
-                      <input type="radio" className="w-5 " />
-                    )}
-                    <span>Pay on delivery</span>
+                  <div
+                    className="flex items-center gap-2"
+                    onClick={handleSelected}
+                  >
+                    <div className="flex w-[20px] h-[20px] justify-center items-center rounded-full border border-[#D19A64]">
+                      {selected ? (
+                        <img src="/assets/brown.png" />
+                      ) : (
+                        <div className="hidden"></div>
+                      )}
+                    </div>
+                    <span>Pay with card</span>
                   </div>
                 </article>
                 <div

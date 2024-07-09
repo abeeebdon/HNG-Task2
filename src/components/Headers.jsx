@@ -52,9 +52,15 @@ const Headers = () => {
         {showNav && width < 768 && (
           <div className="fixed right-0 w-[20vh] top-[10%] z-20 text-white bg-1 bg-opacity-35 h-[50%] p-4">
             <div className="flex flex-col justify-between gap-6">
-              <a href="/">Products</a>
-              <a href="#categories">My cart</a>
-              <a href="#trending-now">Checkout</a>
+              <NavLink to="/products" style={activeState}>
+                Products
+              </NavLink>
+              <NavLink to="/cart" style={activeState}>
+                My cart
+              </NavLink>
+              <NavLink to="/checkout" style={activeState}>
+                Checkout
+              </NavLink>
             </div>
           </div>
         )}
