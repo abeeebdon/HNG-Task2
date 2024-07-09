@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { productData } from '../components/data'
-import { ArrowRight, ArrRight } from '../components/Icons'
 import ProductCard from '../components/ProductCard'
 import MenuHeading from '../components/MenuHeading'
 
@@ -8,7 +7,7 @@ const Products = () => {
   return (
     <section className="flex justify-center">
       <article className="w-full max-w-[1440px]  ">
-        <MenuHeading />
+        <MenuHeading status={false} />
         <h2 className="my-8 p-text2 pt-serif-bold">
           Choose from our varieties of products...
         </h2>

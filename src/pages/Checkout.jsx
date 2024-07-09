@@ -23,7 +23,7 @@ const Checkout = () => {
   return (
     <section className="flex justify-center">
       <article className="w-full max-w-[1440px]  ">
-        <MenuHeading location="checkout" />
+        <MenuHeading location="checkout" route="/cart" />
 
         {checkout ? (
           <Success checkoutProducts={checkoutProducts} />
