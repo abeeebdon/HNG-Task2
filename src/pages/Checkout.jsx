@@ -38,7 +38,7 @@ const Checkout = () => {
         ) : (
           <>
             <div className="flex flex-col md:flex-row px-2 gap-10 items-start mt-8">
-              <section className="flex-shrink-[2]">
+              <section className="flex-shrink-[2] w-full max-w-[600px]">
                 <form>
                   <h2 className="form-heading pt-serif-bold text-center sm:text-left my-3">
                     Contact Information
