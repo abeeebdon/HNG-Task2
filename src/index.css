@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Serif', serif;
+}
 @layer components {
   .btn-bg {
     @apply bg-[#D19A64] hover:bg-[rgb(202,163,123)] text-white font-bold py-2;

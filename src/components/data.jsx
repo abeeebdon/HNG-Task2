@@ -112,3 +112,12 @@ export const productData = [
     type: 'trend',
   },
 ]
+
+export const btnData = [
+  { id: 1, name: 'Description' },
+
+  {
+    id: 2,
+    name: 'Warranty',
+  },
+]

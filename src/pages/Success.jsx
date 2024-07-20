@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import { ArrRight } from '../components/Icons'
+import { useContext } from 'react'
 
-const Success = ({ checkoutProducts }) => {
+const Success = () => {
   const navigate = useNavigate()
-  const { name, src, price } = checkoutProducts
+  const { totalAmount } = useContext(AppContext)
   return (
     <section className="flex justify-center">
       <article className="w-full max-w-[640px] ">
@@ -32,16 +33,12 @@ const Success = ({ checkoutProducts }) => {
             </div>
           </article>
           <hr />
-          <article className="flex gap-6 items-center  py-3">
-            <img src={src} alt="name" className="w-[120px] h-[140px]" />
-            <h3 className="pt-serif-bold form-heading">{name}</h3>
-            <p className="pt-serif-bold text-black text-opacity-[36%] text-[20px] leading-[28px]">{`$${price}`}</p>
-          </article>
+
           <hr />
           <section>
             <article className="flex justify-between items-center my-2">
               <p>Subtotal</p>
-              <p>{`$${checkoutProducts.price}.00`}</p>
+              <p>{totalAmount}</p>
             </article>
             <article className="flex justify-between items-center my-2">
               <p>Delivery fee</p>
@@ -55,7 +52,7 @@ const Success = ({ checkoutProducts }) => {
           <hr />
           <div className="flex justify-between items-center my-2">
             <h3>Total</h3>
-            <p>$2505.00</p>
+            <p>{totalAmount ? totalAmount - 5.0 - 10.0 : 0}</p>
           </div>
         </div>
         <div
